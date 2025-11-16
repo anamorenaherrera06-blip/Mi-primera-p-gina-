@@ -6,6 +6,8 @@
   <title>Estilo by Nerea | Inicio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+<meta http-equiv="refresh" content="0; url=https://anamorenaherrera06-blip.github.io/ByNerea/">
+
 </head>
 <body>
 
