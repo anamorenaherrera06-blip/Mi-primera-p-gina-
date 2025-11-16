@@ -1,0 +1,206 @@
+/* Paleta de colores: Principal: #d63384 (rosa), Secundario: #f8d7da (rosa muy claro), Fondo: #fff6f9 */
+
+body {
+  background-color: #fff6f9;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  color: #333;
+}
+
+/* Tipografía y Componentes Generales */
+.logo {
+  font-family: 'Playfair Display', serif;
+  color: #d63384; /* Color principal */
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+/* Estilos de Navegación */
+.menu {
+  gap: 30px; /* Espacio entre los elementos (uno al lado del otro) */
+}
+
+.nav-link {
+  color: #d63384 !important;
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  padding: 5px 0;
+}
+
+.nav-link.active, .nav-link:hover {
+  color: #b52e70 !important;
+  border-bottom: 2px solid #b52e70;
+}
+
+/* Estilo del Botón Principal */
+.btn-rosa {
+  background-color: #d63384;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 25px;
+  transition: background-color 0.3s;
+}
+
+.btn-rosa:hover { 
+    background-color: #b52e70; 
+    color: #fff;
+}
+
+/* ==== SECCIÓN HERO (Fondo de Pantalla) ==== */
+.hero {
+  background-image: url("inicoportada.jpeg");  /* CAMBIÁ ESTA RUTA por la de tu imagen! */
+  background-size: cover;
+  background-position: center;
+  height: 90vh; 
+  color: white;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Asegura que el logo y el menú sean blancos dentro del hero */
+.hero .logo, .hero .nav-link {
+    color: white !important; 
+}
+
+/* Fuerza el tamaño del logo en el header del hero para que no cambie */
+.hero .logo {
+    font-size: 2rem; 
+}
+
+.hero-text {
+  padding: 0 20px;
+  margin-top: 100px; 
+}
+
+.hero-text h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+/* ==== SECCIÓN DE PRODUCTOS / GALERÍA ==== */
+.product-card {
+  border: 1px solid #f8d7da;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.product-card:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card-title {
+    color: #d63384;
+    font-weight: 600;
+}
+
+/* ==== CARRITO/TIENDA (tienda.html) ==== */
+.search-bar {
+  border: 2px solid #d63384;
+  border-radius: 25px;
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* ==== FOOTER ==== */
+.footer {
+  background-color: #f8d7da;
+  color: #d63384;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+}
+
+/* MEDIA QUERIES (Responsividad) */
+
+/* En celulares */
+@media (max-width: 768px) {
+    /* El menú en celulares se apila (verticalmente) gracias a Bootstrap, pero aseguramos la separación */
+    .menu {
+        gap: 10px;
+    }
+    .hero {
+        height: 60vh;
+    }
+    .hero-text h2 {
+        font-size: 2.5rem;
+    }
+    .logo {
+      font-size: 2rem;
+    }
+}
+/*======================================================================
+  1. VARIABLES GLOBALES (Asegúrate de que existan)
+======================================================================*/
+:root {
+    --color-acento: #5a2e9b; /* Morado de tu marca */
+    --color-texto-claro: #fff; /* Blanco, para el texto sobre fondo oscuro */
+}
+
+
+/*======================================================================
+  2. ESTILOS DE LA BARRA DE NAVEGACIÓN DENTRO DEL HEADER
+======================================================================*/
+
+/* Estilo para el Título/Marca ("Estilo by Nerea") */
+.hero .logo {
+    color: var(--color-texto-claro); /* Texto blanco para contraste */
+    font-weight: 700;
+    font-size: 1.8em;
+}
+
+/* Estilo para los Enlaces de Navegación (texto y separación) */
+.hero .nav-link {
+    color: var(--color-texto-claro); /* Color del texto normal */
+    font-weight: 500;
+    margin: 0 12px; /* Espacio entre los elementos del menú */
+    transition: color 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+/* Estilo al pasar el ratón (Hover) y para el enlace activo */
+/* Usamos !important en caso de que Bootstrap esté sobreescribiendo el color */
+.hero .nav-link:hover,
+.hero .nav-link.active {
+    color: var(--color-acento) !important; /* ¡Tu color morado! */
+}
+
+
+/*======================================================================
+  3. ESTILOS PARA MÓVILES (Menú Colapsado)
+======================================================================*/
+@media (max-width: 767.98px) {
+    /* Fondo del menú al colapsarse (evita que los links blancos sean ilegibles) */
+    .hero .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro semitransparente */
+        padding: 15px 20px;
+        border-radius: 5px;
+        margin-top: 10px; /* Separación del botón hamburguesa */
+    }
+    
+    /* Más espacio entre los enlaces en vista móvil */
+    .hero .nav-link {
+        padding: 10px 0;
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Eliminar el borde inferior del último ítem en móvil */
+    .hero .nav-item:last-child .nav-link {
+        border-bottom: none;
+    }
+}
